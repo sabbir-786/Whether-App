@@ -1,7 +1,7 @@
 # **Weather App** :sun_behind_rain_cloud:       
 
-### :santa: Developer : _Sandeepan_
-### :date: Date : 25/02/2024
+### :santa: Developer : _Sabbir_
+### :date: Date : 03/12/2024
 ### :hammer_and_wrench: Tech Stack Used : 
 * HTML5
 * CSS3
