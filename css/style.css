@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+/* Predefined Color Pallete */
+
+:root{
+   --back-col1: #3E3232;
+   --back-col2: #7E6363;
+    --col1: #3191F7;
+    --col2: #38C9F6;
+    --col3: #67adf8;
+    --sun: #ffc800;
+}
+
+
+html{
+    font-size: 16px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+/* Landing Component Starts ... */
+.wrapper{
+    width: 100%;
+    height: 100dvh;
+    background-image: url('../assets/images/background1.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+main{
+    width: 25rem;
+    text-align: center;
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    background-image: linear-gradient(0deg, var(--col1), var(--col2));
+}
+.search-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.search-box input{
+    width: 85%;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    padding: 0 1rem;
+    font-weight: 500;
+    background-color: #a6d1ff;
+}
+.search-box input:focus{
+    border: 2px solid black;
+}
+.search-box button{
+    background-color: #7c9fc5;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    padding-top: 0.2rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.search-box button:hover{
+    background-color: var(--col1);
+}
+main .weather-data{
+    text-align: center;
+    display: none;
+}
+main .weather-data h1{
+    margin: 1rem 0;
+    font-weight: 700;
+}
+#date-time{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.weather-icon-box{
+    margin: 0 auto;
+    width: 9rem;
+    height: 9rem;
+}
+.weather-icon-box img{
+    width: 100%;
+    object-fit: cover;
+    filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.6));
+}
+#temperature{
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    margin-left: 1.3rem;
+}
+#weather-status{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.max-min{
+    margin-top: 0.3rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+.max-min-temp{
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.weather-elements{
+    margin-top: 2.5rem;
+    width: 100%;
+    height: 7rem;
+    display: grid;
+    gap: 0.2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+.weather-elements .elements{
+    background-color: var(--col3);
+    border-radius: 0.5rem;
+}
+.elements{
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+.element-logo{
+    font-size: 2.5rem;
+}
+.context-value{
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+}
+.value-units .units{
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+.context-title{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+#wind-speed{
+    margin-left: 1.3rem;
+}
+#wind-direction{
+    position: absolute;
+    top: 0.4rem;
+    left: 0rem;
+    font-size: 2rem;
+    transform: rotate(270deg);
+}
+
+/* ------------------------------------ */
+
+/* For Intro Page */
+.intro-container{
+    display: block;
+    margin-top: 4rem;
+    width: 100%;   
+}
+.intro-container .sun{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: var(--sun);
+    margin: 0 auto;
+    animation: rise-set 3s;
+    box-shadow: 0px 0px 10px var(--sun);
+}
+.intro-container .content{
+    margin: 0 auto;
+    position: relative;
+    top: -4.5rem;
+    width: 80%;
+    backdrop-filter: blur(40px);
+    border-top: 1px solid white;
+    text-align: center;
+}
+.intro-container .content h1{
+    margin-top: 3.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.intro-container .content #border-design{
+    width: 3rem;
+    height: 0.3rem;
+    background-color: var(--col2);
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    display: block;
+}
+.content p{
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+#date{
+    margin-top: 3.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+@keyframes rise-set{
+    0%{
+      transform: translateY(1.5rem);
+    }
+    100%{
+      transform: translateY(0);
+    }
+}
+/* ------------------------------------------------ */
+
+/* Loader from css-loaders.com */
+
+main .loader-container{
+    display: none;
+    margin: 14rem 0;
+    text-align: center;
+}
+.loader{
+    margin: 0 auto;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    animation: animate-dots 1s infinite linear alternate;
+}
+@keyframes animate-dots{
+    0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
+    33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
+    66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+    100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+}
+/* ---------------------------------------------- */
+
+/* Error Handling Page */
+
+main .error-container{
+    display: none;
+    margin-top: 2rem;
+    width: 100%;
+}
+.error-container .invalid-img img{
+    width: 21rem;
+}
+.error-container .invalid-img p{
+    margin: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/* ------------------------------------------ */
+
+/* For Responsiveness */
+
+/* For Tablet View */
+@media screen and (max-width: 960px){
+    html{
+        font-size: 22px;
+    }
+}
+
+/* For Mobile View */
+@media screen and (max-width: 600px){
+    html{
+        font-size: 16px;
+    }
+    .wrapper{
+        background-image: none;
+    }
+    main{
+        border-radius: 0;
+        width: 100%;
+        height: 100dvh;
+        padding: 2rem 1rem;
+    }
+    .search-box input{
+        width: 80%;
+    }
+    .intro-container .content h1{
+        padding: 1rem 0;
+        font-size: 2.3rem;
+    }
+    .search-box button{
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    .intro-container{
+        margin-top: 5rem;
+    }
+    main .error-container{
+        margin-top: 5rem;
+    }
+    .error-container .invalid-img img{
+        width: 20rem;
+    }
+    main .weather-data{
+        margin-top: 2rem;
+    }
+    .weather-icon-box{
+        width: 10rem;
+        height: 10rem;
+    }
+}

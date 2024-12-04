@@ -1,0 +1,111 @@
+<!-- 
+    Developer : Sabbir Ansari
+    Project : Weather Web App
+    Start Date : 03/12/2023
+    End Date : 25/02/2024
+    Tech Stack Used : HTML5, CSS3, JavaScript, Open Weather API 
+    Description : This is a interactive Weather App which shows realtime Weather information"  
+    Feature : Responsive across all devices with realtime weather data.
+              It shows realtime weather information like:
+              Current weather conditions with animated icons.
+              Current temperature in celcius with max and min temp. 
+              Current Local date and time of the city.
+              Pollution AQI data.
+              Rainfall in mm.
+              Wind Speed in km/h with wind direction (0 deg at North).
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive weather app with realtime weather data.">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/fav.ico">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="main.js" defer></script>
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <div class="search-box">
+                <input type="text" id="search-field" placeholder="Search for City...">
+                <button type="button" title="Click to Search"><i class='bx bx-search'></i></button>
+            </div>
+            <div class="weather-data">
+                <h1>New Delhi</h1>
+                <p id="date-time">Tue, 13 Feb 8:00</p>
+                <div class="weather-icon-box"><img src="./assets/clouds/overcast-day.svg" alt="weather icon" id="weather-icon"></div>
+                <p id="temperature">22<sup>&deg;</sup></p>
+                <p id="weather-status">Mostly Cloudy</p>
+                <div class="max-min-temp">
+                    <span>Max:&nbsp;</span>
+                    <p id="max-temp">28</p>
+                    <span>&deg;&nbsp;| Min:&nbsp;</span>
+                    <p id="min-temp">16</p>
+                    <span>&deg;</span>
+                </div>
+
+                <div class="weather-elements">
+                    <!-- AQI -->
+                    <div class="elements">
+                        <p class="context-value" id="aqi">180</p>
+                        <div class="element-logo"><i class='bx bxs-leaf'></i></div>
+                        <p class="context-title">AQI</p>
+                    </div>
+                    <!-- Rainfall -->
+                    <div class="elements">
+                        <div class="value-units">
+                            <p class="context-value" id="rainfall">2.3</p>
+                            <span class="units">mm</span>
+                        </div>
+                        <div class="element-logo"><i class='bx bxs-cloud-rain'></i></div>
+                        <p class="context-title">Rainfall</p>
+                    </div>
+                
+                    <!-- Wind Speed with Direction -->
+                    <div class="elements">
+                        <div class="value-units">
+                            <span id="wind-direction"><i class='bx bxs-up-arrow-alt'></i></span>
+                            <p class="context-value" id="wind-speed">100</p>
+                            <span class="units">km/h</span>
+                        </div>
+                        <div class="element-logo"><i class='bx bx-wind'></i></div>
+                        <p class="context-title">Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intro Page-->
+            <div class="intro-container">
+                <div class="sun"></div>
+                <div class="content">
+                  <h1>Weather App</h1>
+                  <div id="border-design"></div>
+                  <p>Design by Sandeepan</p>
+                   <p id="date">Feb, 2024</p>
+                </div>
+             </div>
+
+            <!-- Loader -->
+            <div class="loader-container">
+                <div class="loader"></div>
+            </div>
+            
+            <!-- For Error Handling -->
+            <div class="error-container">
+                <div class="invalid-img">
+                    <img src="./assets/images/invalid.png" alt="Invalid city">
+                    <p>City Not Found</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <noscript>Your browser does not support JavaScript!</noscript>
+</body>
+</html>
